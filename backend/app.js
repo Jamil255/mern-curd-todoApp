@@ -1,7 +1,9 @@
 import express from 'express'
 import connectDb from './config/db.js'
 import postModel from './models/postModel.js'
+import cors from 'cors'
 const app = express()
+app.use(cors({ origin: '*' }))
 const PORT = 3000
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
