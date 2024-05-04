@@ -6,10 +6,6 @@ const PORT = 3000
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 connectDb()
-
-app.get('/', (req, res) => {
-  res.send('Welcome')
-})
 app.post('/createpost', async (req, res) => {
   try {
     const { value, userID } = req.body
