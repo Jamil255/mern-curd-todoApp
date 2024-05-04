@@ -36,7 +36,13 @@ app.post('/createpost', async (req, res) => {
     })
   }
 })
-
+app.get(
+  '/',
+  (req,
+  (res) => {
+    res.send('success   message')
+  })
+)
 app.get('/getusers', async (req, res) => {
   try {
     const userData = await postModel.find({})
