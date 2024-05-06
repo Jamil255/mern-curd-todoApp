@@ -36,8 +36,6 @@ function App() {
   }
 
   const handleSaveClick = async (index, postId) => {
-    console.log(index)
-    console.log(postId)
     try {
       const obj = {
         value: editValue,
@@ -54,6 +52,7 @@ function App() {
   const deletePost = async (id) => {
     try {
       const post = await axios.delete(`${BASE_URL}/deletepost/${id}`)
+      setEditIndex('')
       fetchData()
     } catch (error) {
       console.log(error.message)
